@@ -2,6 +2,12 @@
 .vs/
 _Plugins/
 
+
+*.pro.user
+
+## build binaries
+Windows/
+
 # Compiled Object files
 *.slo
 *.lo

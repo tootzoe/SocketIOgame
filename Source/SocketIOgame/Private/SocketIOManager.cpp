@@ -55,7 +55,7 @@ int32 USocketIOManager::ConnectToUrl(const FString &Url)
     _mainSocket->OnConnected().AddLambda([]() -> void {
         // This code will run once connected.
          GEngine->AddOnScreenDebugMessage(-1, 16.f, FColor::Green, TEXT("OnConnected ok.... " )   );
-          UE_LOG(LogTemp, Warning, TEXT("OnConnected() called...."));
+          UE_LOG(LogTemp, Warning, TEXT("OnConnected() called........."));
            TArray<uint8> binDataArr;
           OnWssStatusChged.Broadcast( E_Connected , binDataArr);
     });
@@ -84,7 +84,7 @@ int32 USocketIOManager::ConnectToUrl(const FString &Url)
 
          TArray<uint8> binDataArr;
          FStringToUin8Arr(Message , binDataArr);
-         OnWssStatusChged.Broadcast( E_ConnectionError ,  binDataArr );
+         OnWssStatusChged.Broadcast( E_TextMsg ,  binDataArr );
     });
 
     _mainSocket->OnRawMessage().AddLambda([](const void* Data, SIZE_T Size, SIZE_T BytesRemaining) -> void {
